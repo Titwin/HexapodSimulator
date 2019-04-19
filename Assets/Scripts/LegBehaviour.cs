@@ -10,7 +10,7 @@ public class LegBehaviour : MonoBehaviour
     public Transform springMesh;
     
     private Transform springT;
-    private Rigidbody originRB;
+    //private Rigidbody originRB;
     private Rigidbody springRB;
 
     [Space(10)]
@@ -21,7 +21,7 @@ public class LegBehaviour : MonoBehaviour
     [Range(0.0f, 100.0f)]
     public float damping;
 
-    private float springLengthSpeed;
+    //private float springLengthSpeed;
     //
 
 
@@ -29,11 +29,11 @@ public class LegBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        originRB = originObject.GetComponent<Rigidbody>();
+        //originRB = originObject.GetComponent<Rigidbody>();
         springT = springObject.transform;
         springRB = springObject.GetComponent<Rigidbody>();
 
-        springLengthSpeed = 0.0f;
+        //springLengthSpeed = 0.0f;
         springLength = 0.0f;
         
     }
@@ -50,7 +50,7 @@ public class LegBehaviour : MonoBehaviour
         springT.transform.localEulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
 
         //  spring recurence variables
-        springLengthSpeed = springT.localPosition.y - springLength;
+        //springLengthSpeed = springT.localPosition.y - springLength;
         springLength = springT.localPosition.y;
 
         //  relocalize spring mesh
@@ -58,7 +58,7 @@ public class LegBehaviour : MonoBehaviour
         springMesh.localPosition = new Vector3(0.0f, -0.8f + 0.5f * Mathf.Abs(springLength), 0.0f);
 
         //  apply forces
-        float magnitude = rigidity * springLength + damping * springLengthSpeed;
+        //float magnitude = rigidity * springLength + damping * springLengthSpeed;
 
         /*originRB.AddRelativeForce(0.0f, magnitude * originRB.mass, 0.0f, ForceMode.Impulse);
         springRB.AddRelativeForce(0.0f,-magnitude * springRB.mass, 0.0f, ForceMode.Impulse);*/

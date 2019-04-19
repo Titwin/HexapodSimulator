@@ -5,6 +5,8 @@ using UnityEngine;
 public class Totem : MonoBehaviour {
 
     [SerializeField]
+    public int TotemID;
+    [SerializeField]
     public Marker[] markers;
 
 }

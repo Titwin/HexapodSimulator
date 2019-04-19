@@ -101,6 +101,7 @@ public class RobotVision : MonoBehaviour
                 }
                 catch (Exception e)
                 {
+                    Debug.LogException(e, this);
                     //Debug.LogWarning("cannot parse: " + markers[i]);
                 }
             }
