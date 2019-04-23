@@ -21,7 +21,22 @@ public class SceneExporter : MonoBehaviour {
         int tidx = 0;
         foreach (Totem t in totems)
         {
-            writer.WriteLine("Totem: "+ tidx);
+            writer.Write("Totem: "+ t.TotemID + " : ");
+
+            writer.Write(0.1f * t.transform.position.x + " ");
+            writer.Write(0.1f * t.transform.position.y + " ");
+            writer.Write(0.1f * t.transform.position.z + " ");
+
+            writer.Write(t.transform.rotation.x + " ");
+            writer.Write(t.transform.rotation.y + " ");
+            writer.Write(t.transform.rotation.z + " ");
+            writer.Write(t.transform.rotation.w + " ");
+
+            writer.Write(t.transform.localScale.x + " ");
+            writer.Write(t.transform.localScale.y + " ");
+            writer.Write(t.transform.localScale.z + "\n");
+
+
             foreach (Marker m in t.markers)
             {
                 writer.Write(m.markerID+" : ");

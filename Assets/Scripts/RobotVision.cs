@@ -101,7 +101,7 @@ public class RobotVision : MonoBehaviour
                 }
                 catch (Exception e)
                 {
-                    Debug.LogException(e, this);
+                    //Debug.LogException(e, this);
                     //Debug.LogWarning("cannot parse: " + markers[i]);
                 }
             }
@@ -125,7 +125,7 @@ public class RobotVision : MonoBehaviour
             angle += weight * weight * reconstructedCamera[id].eulerAngles.y;
             weightSum += weight * weight;
         }
-        Debug.Log(s);
+        //Debug.Log(s);
 
         position /= weightSum;
         angle /= weightSum;
@@ -134,7 +134,7 @@ public class RobotVision : MonoBehaviour
         visionAngles = new Vector3(0, angle, 0);
         
         hexapodTransform.localPosition = visionPosition;
-        hexapodTransform.LookAt(totemTransform);
+        //hexapodTransform.LookAt(totemTransform);
         
 
 
