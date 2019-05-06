@@ -118,12 +118,13 @@ public class RobotVision : MonoBehaviour
         {
             Vector3 direction = FixedMarkers[id].position - reconstructedCamera[id].position;
             float weight = 1.3f - Math.Abs(Vector3.Dot(FixedMarkers[id].forward, Vector3.Normalize(direction)));
-            weight = Mathf.Clamp(weight, 0.3f, 1.0f);
+            weight = Mathf.Clamp(weight, 0.1f, 1.0f);
+            weight = Mathf.Pow(weight, 4);
             s += id.ToString() + " : " + (weight * weight).ToString() + " ";
 
-            position += weight * weight * reconstructedCamera[id].position;
-            angle += weight * weight * reconstructedCamera[id].eulerAngles.y;
-            weightSum += weight * weight;
+            position += weight * reconstructedCamera[id].position;
+            angle += weight * reconstructedCamera[id].eulerAngles.y;
+            weightSum += weight;
         }
         //Debug.Log(s);
 
