@@ -40,14 +40,14 @@ public class SceneExporter : MonoBehaviour {
             foreach (Marker m in t.markers)
             {
                 writer.Write(m.markerID+" : ");
-                writer.Write(0.1f * m.transform.position.x+" ");
-                writer.Write(0.1f * m.transform.position.y + " ");
-                writer.Write(0.1f * m.transform.position.z + " ");
+                writer.Write(0.1f * m.transform.localPosition.x+" ");
+                writer.Write(0.1f * m.transform.localPosition.y + " ");
+                writer.Write(0.1f * m.transform.localPosition.z + " ");
 
-                writer.Write(m.transform.rotation.x + " ");
-                writer.Write(m.transform.rotation.y + " ");
-                writer.Write(m.transform.rotation.z + " ");
-                writer.Write(m.transform.rotation.w + " ");
+                writer.Write(m.transform.localRotation.x + " ");
+                writer.Write(m.transform.localRotation.y + " ");
+                writer.Write(m.transform.localRotation.z + " ");
+                writer.Write(m.transform.localRotation.w + " ");
 
                 writer.Write(m.transform.localScale.x + " ");
                 writer.Write(m.transform.localScale.y + " ");
