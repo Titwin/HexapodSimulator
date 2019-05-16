@@ -112,9 +112,10 @@ public class RobotSyncronizer : MonoBehaviour
             else if (jsonArray[i].IndexOf("orientation") == 0)
             {
                 int index = jsonArray[i].IndexOf("orientation") + 11;
-                Vec4 v = JsonUtility.FromJson<Vec4>(jsonArray[i].Substring(index, jsonArray[i].Length - index));
-                robotTransform.localRotation = new Quaternion(v.x, v.y, v.z, v.w);
-                robotTransform.localEulerAngles = robotTransform.localEulerAngles + new Vector3(0, 90, 0);
+                Vec3 v = JsonUtility.FromJson<Vec3>(jsonArray[i].Substring(index, jsonArray[i].Length - index));
+                //robotTransform.localRotation = new Quaternion(v.x, v.y, v.z, v.w);
+                robotTransform.localEulerAngles = new Vector3(v.x, v.y, v.z);
+                //robotTransform.localEulerAngles = robotTransform.localEulerAngles;
             }
         }
     }
